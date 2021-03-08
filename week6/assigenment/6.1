@@ -1,61 +1,86 @@
+PS C:\Users\hp\Desktop\truffel> truffle develop
+Truffle Develop started at http://127.0.0.1:9545/
+
+Accounts:
+(0) 0x301168f26940ff7017b59b3bd4a6166284d6d691
+(1) 0x1af096519546b242da09f06e38e99e5d64609822
+(2) 0x74b9127b26be550ae4c6bbb37f78411fe85b1239
+(3) 0x5ad7e5c45a7cdff3ef46a48e3eb50663d09e68a0
+(4) 0xb9b52772e0ff2ecce6bbba6f97f34757cc56cab9
+(5) 0x5fd62cf697fa77a5ceaad75cd4ccb229a81ced0e
+(6) 0x9d397b4805a70934ce98013b1795f257f4e5dec6
+(7) 0x7d113176dcb5004ac3578b077be8350713bf175a
+(8) 0xec02346c856517734eb69035c49d6488e85cf77e
+(9) 0x588b8a3700249abd52cb22dd1ca6cb1b0f263bb2
+
+Private Keys:
+(0) 0305aeaaca0a1e8ddb8a0fb360ed3aa7d34caa3574ba39f352265ed45490ec72
+(1) c47a43c684a6623375e39e5ef8cb35ebe2ef0c036097043f7b07ba8b8c7e3c07
+(2) 569d7c50688a4eaa9c31c74d459d092e0912c1314190df1218eb5554cb68a946
+(3) 9b38edca9dfccc568bcf6ddfbd7b36de75ef8c4f64e0b681d2abcd2e41b2ab8a
+(4) ea37848de90da607eaa6277f943adb32644f317c7c323f02561b0321a7ea9821
+(5) 36930b0d02c6c4ef204a4b1a4b15be4e14d0c1e4a8b2284a1db7fbf460194779
+(6) a2adf7742c0581aebe0fc096498375341090bd32421749f3259c01d0ec9440d1
+(7) 9612ca6ab29a41c4f5099350050013acaa6c21c14d1c33d0fc0d4b63b5166b27
+(8) af10a4cc6fa0ed3c1da0016f76df37391ab7af485ce491546ef029a103f3c2a8
+(9) f2369fca43f02d455a864dff0bcbeedde593bfc7b10c78f47b8284e741c93ec1
+
+Mnemonic: repeat frame lottery sock catch neither language basket spell smooth finish invest
+
+⚠️  Important ⚠️  : This mnemonic was created for you by Truffle. It is not secure.
+Ensure you do not use it on production blockchains, or else you risk losing funds.
+
 truffle(develop)> migrate
 
 Compiling your contracts...
 ===========================
-> Compiling .\contracts\TechInsurance.sol
-> Compilation warnings encountered:
-
-    @openzeppelin/contracts/introspection/ERC165.sol:24:5: Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making it "abstract" is sufficient.
-    constructor () internal {
-    ^ (Relevant source part starts here and spans across multiple lines).
-,@openzeppelin/contracts/token/ERC721/ERC721.sol:93:5: Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making it "abstract" is sufficient.
-    constructor (string memory name_, string memory symbol_) public {
-    ^ (Relevant source part starts here and spans across multiple lines).
-,/C/Users/hp/Desktop/truffel/contracts/TechInsurance.sol:25:5: Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making 
-it "abstract" is sufficient.
-    constructor() public ERC721("Elite", "code"){
-    ^ (Relevant source part starts here and spans across multiple lines).
-,/C/Users/hp/Desktop/truffel/contracts/TechInsurance.sol:55:71: Warning: Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
-    function customerSelect(uint _objectIndex) public payable returns(bool) {
-                                                                      ^--^
-,/C/Users/hp/Desktop/truffel/contracts/TechInsurance.sol:51:9: Warning: Unused local variable.
-        uint price = _price;
-        ^--------^
-,/C/Users/hp/Desktop/truffel/contracts/TechInsurance.sol:35:5: Warning: Function state mutability can be restricted to view
-    function doNotOffer(uint _objectIndex) public returns(bool) {
-    ^ (Relevant source part starts here and spans across multiple lines).
-,/C/Users/hp/Desktop/truffel/contracts/TechInsurance.sol:40:5: Warning: Function state mutability can be restricted to view
-    function forOffer(uint _objectIndex) public returns(bool) {
-    ^ (Relevant source part starts here and spans across multiple lines).
-,/C/Users/hp/Desktop/truffel/contracts/TechInsurance.sol:50:5: Warning: Function state mutability can be restricted to view
-    function setPrice (uint _price) public {
-    ^ (Relevant source part starts here and spans across multiple lines).
-
-> Artifacts written to C:\Users\hp\Desktop\truffel\build\contracts
-> Compiled successfully using:
-   - solc: 0.7.4+commit.3f05b770.Emscripten.clang
+> Everything is up to date, there is nothing to compile.
 
 
 
-Starting migrations...
-======================
+Starting migrations...      
+======================      
 > Network name:    'develop'
-> Network id:      5777
+> Network id:      5777     
 > Block gas limit: 6721975 (0x6691b7)
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > transaction hash:    0xe8cb172125dfcf7f2f3cd5d8a7631b3cb131f70993e77d49310c4c7afcac7e87
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x235a4b13C0198Fd1ddfBB9d4A7a53297838eea80
+   > block number:        1
+   > block timestamp:     1615231540
+   > account:             0x301168f26940Ff7017b59b3bd4A6166284d6D691
+   > balance:             99.99626074
+   > gas used:            186963 (0x2da53)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00373926 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00373926 ETH
 
 
 2_insurrance.js
 ===============
 
-   Deploying 'TechInsurance'
+   Replacing 'TechInsurance'
    -------------------------
-   > transaction hash:    0x7e970bb4727fa7ac4ea9748c4b69c71c52b22776f41283ec895b124ff269db61
+   > transaction hash:    0x72df5e6108ea7d763ee072135e837eb6b915ef53cd8575bb38545a4aae2a0091
    > Blocks: 0            Seconds: 0
-   > contract address:    0xf272aE29D1B1A011637e358661bB184462342ea7
-   > block number:        5
-   > block timestamp:     1615121200
+   > contract address:    0x152A9E9600ec934634CB1e1d4B8acec5858CaB82
+   > block number:        3
+   > block timestamp:     1615231543
    > account:             0x301168f26940Ff7017b59b3bd4A6166284d6D691
-   > balance:             99.92914632
+   > balance:             99.93373228
    > gas used:            3084088 (0x2f0f38)
    > gas price:           20 gwei
    > value sent:          0 ETH
@@ -70,11 +95,23 @@ Starting migrations...
 
 Summary
 =======
-> Total deployments:   1
-> Final cost:          0.06168176 ETH
+> Total deployments:   2
+> Final cost:          0.06542102 ETH
 
 
 - Blocks: 0            Seconds: 0
 - Saving migration to chain.
+- Blocks: 0            Seconds: 0
+- Saving migration to chain.
 
-truffle(develop)>
+truffle(develop)> test
+Using network 'develop'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+  0 passing (1ms)

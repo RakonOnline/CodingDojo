@@ -1,0 +1,45 @@
+//SPDX-License-Identifier: MIT
+
+pragma solidity 0.8.0;
+
+contract multisign {
+    address public  Owner ;
+    address [] public auther ;
+   
+    mapping (address => bool) public Admin;
+    
+    constructor() public {
+        Owner = msg.sender;
+        Admin[msg.sender] = false;
+    }
+    
+    modifier onlyOwner() {
+        require(msg.sender == Owner, "Not the owner");
+        _;
+    }
+    
+    modifier notNull(address _address) {
+    require(_address != address(0));
+        _;
+    }
+    
+    modifier AutherExist(address _address) {
+        require(Admin[_address] == false, "its added");
+        _;
+  }
+  
+    function getAuths() public view returns (address[] memory)
+    {
+        return auther;
+    }
+    
+    function addAuths(address _address) public onlyOwner() AutherExist(_address) notNull(_address) {
+         Admin[_address] = true;
+    }
+    
+    function Authrize() public  returns (uint _x) {
+        require(Admin[msg.sender] == true, "you are unable to do so");
+        auther.push(msg.sender);
+        return (auther.length);
+    }
+}
